@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+   
+    body {
+        background: linear-gradient(45deg, var(--color-01), var(--color-02));;
+    }
+
+    #container {
+        max-width: 70vw;
+        transition: .5s;
+    }
+
+    #login_button {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    
+    #container {
+        width: 40vw;
+        transition: .5s;
+    }
+
+    #login_button {
+        width: 40%;
+    }
+       
+    
+}

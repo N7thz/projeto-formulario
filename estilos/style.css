@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Oswald&family=Poppins&display=swap');
+
+:root {
+    --color-light-01: #f8fafc;
+
+    --color-dark-01: #797984;
+    --color-dark-02: #312d37;
+    --color-dark-03: #000;
+
+    --color-01: #7c3aed;
+    --color-02: #41C0F2;
+    --color-03: #323D73;
+    --color-04: #F8BEE0;
+
+    --color-gradient: linear-gradient(-45deg, var(--color-01), var(--color-02));
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font: normal 1em 'Poppins', sans-serif;;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-gradient) no-repeat;
+    background-size: cover;
+}
+
+/* Conteudo do site */
+#container {
+    animation: to_right 1s ease-out;
+    transition: 1s; 
+    background-color:#f8fafcda;
+    width: 80vw;
+    height: 70vh;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #00000065;
+}
+
+/* Cabeçalho */
+#form_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.5em;
+    margin: 20px;
+}
+
+#form_header h1 {
+    position: relative;
+}
+
+#form_header h1::before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--color-01);
+    height: 3px;
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+#mode_icon {
+    background-color: transparent;
+    border: none;
+}
+
+#mode_icon:hover {
+    animation: rotation 1s ease-in-out alternate infinite;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* Redes sociais */
+#social_media {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#social_media  img {
+    width: 60px;
+}
+
+#social_media  img:hover {
+    transform: scale(1.2);
+}
+
+/* Caixa de Textos*/
+#input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-field :focus {
+    color: transparent;
+    outline: none;
+}
+
+.input_box {
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.input_box::after {
+    content: '';
+    background-color: var(--color-01);
+    width: 95%;
+    height: 2px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.input-field input {
+    border: none;
+    background-color:transparent;
+    color: var(--color-dark-03);
+    cursor: text;
+    width: 90%;
+    padding: 10px;
+}
+
+.input-field input:focus {
+   background-color: transparent; 
+   color: var(--color-dark-03);
+}
+
+#forgot_password {
+    text-align: center ;
+    margin: 10px;
+}
+
+#forgot_password a {
+    color: var(--color-dark-03);
+    text-decoration: none;
+}
+
+#forgot_password a:hover {
+    color: var(--color-01);
+}
+
+/* Botão */ 
+#login_button {
+    display: flex;
+    justify-content: center;
+    background: var(--color-gradient);
+    background-size: 300% 300%;
+    color: var(--color-light-01);
+    width: 80%;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+#login_button:hover {
+    cursor: pointer;
+    animation: butao 2s ease alternate infinite;
+    transform: scale(1.1);
+}
+/* =============================================================================
+    CSS dark mode 
+   =============================================================================*/
+
+.dark#container {
+    background-color: var(--color-dark-02);
+    color: var(--color-light-01);
+    transition: .3 ease-in-out;
+}
+
+.dark#container #form_header h1::before{
+    background-color: var(--color-02);
+}
+
+.dark#container a {
+    color: var(--color-light-01);
+}
+
+.dark#container a:hover {
+    color: var(--color-01);
+}
+
+.dark#container  .input_box::after {
+    background-color: var(--color-02);
+}
+
+/* =============================================================================
+    Animações 
+   =============================================================================*/
+
+   @keyframes butao {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes to_right {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate( -15deg );
+    }
+}
